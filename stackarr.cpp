@@ -59,4 +59,5 @@ int main()
     st.push(4);
     cout << st.Top() << endl;
     st.pop();
+    cout << st.Top() << endl;
 }
