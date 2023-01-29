@@ -1,3 +1,5 @@
+// C++ program to implement push,pop and peek in a stack.
+
 #include <iostream>
 using namespace std;
 
