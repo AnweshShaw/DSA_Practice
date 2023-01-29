@@ -1,1 +1,1 @@
-# Practice of  coding essential fundamentals in Data Structures and Algorithms(DSA).
+# Practice of essential coding fundamentals in Data Structures and Algorithms(DSA).
