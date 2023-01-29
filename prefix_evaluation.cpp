@@ -47,6 +47,6 @@ int main()
 {
     std::string s; // Method of taking multi-word input(String) in C++
     std::getline(std::cin, s);
-    cout << Answer = << prefixevaluation(s) << endl;
+    cout << " Answer = "<< prefixevaluation(s) << endl;
     return 0;
 }
