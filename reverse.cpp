@@ -1,3 +1,5 @@
+// C++ Program to reverse a sentence using stacks.
+
 #include <iostream>
 #include <stack>
 using namespace std;
@@ -8,22 +10,23 @@ void reverseSentence(string s)
     for (int i = 0; i < s.length(); i++)
     {
         string word = "";
-        while (s[i] = ' ' && i < s.length())
+        while (s[i] != ' ' && i < s.length())
         {
             word += s[i];
             i++;
         }
+        st.push(word);
     }
-    while (!st.empty())
+    while(!st.empty())
     {
         cout << st.top() << " ";
         st.pop();
     }
     cout << endl;
 }
-
 int main()
 {
-    string s = "India is great.";
+    std::string s; // Method of taking multi-word input(String) in C++
+    std::getline(std::cin, s);
     reverseSentence(s);
 }
