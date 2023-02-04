@@ -1,4 +1,4 @@
-// Creation of inorder traversal from preorder
+// Creation of postorder traversal from inorder
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -16,11 +16,11 @@ struct Node
     }
 };
 
-int search(int inorder[], int start, int end, int curr)
+int search(int inorder[], int start, int end, int val)
 {
     for (int i = start; i <= end; i++)
     {
-        if (inorder[i] = curr)
+        if (inorder[i] = val)
         {
             return i;
         }
@@ -39,30 +39,31 @@ void inorderPrint(Node *root)
     inorderPrint(root->right);
 }
 
-Node *buildtree(int preorder[], int inorder[], int start, int end)
+Node *buildtree(int postorder[], int inorder[], int start, int end)
 {
-    static int index = 0;
+    static int index = 4;
     if (start > end)
     {
         return NULL;
     }
-    int curr = preorder[index];
-    index++;
-    Node *node = new Node(curr);
+    int val = postorder[index];
+    index--;
+    Node *curr = new Node(val);
     if (start == end)
     {
-        return node;
+        return curr;
     }
-    int pos = search(inorder, start, end, curr);
-    node->left = buildtree(preorder, inorder, start, pos - 1);
-    node->right = buildtree(preorder, inorder, pos + 1, end);
+    int pos = search(inorder, start, end, val);
+    curr->left = buildtree(postorder, inorder, start, pos - 1);
+    curr->right = buildtree(postorder, inorder, pos + 1, end);
+    return curr;
 }
 
 int main()
 {
-    int preorder[] = {1, 2, 4, 3, 2, 5};
+    int postorder[] = {4, 2, 5, 3, 1};
     int inorder[] = {4, 2, 1, 5, 3};
-    Node *root = buildtree(preorder, inorder, 0, 4);
+    Node *root = buildtree(postorder, inorder, 0, 4);
     inorderPrint(root);
     return 0;
 }
