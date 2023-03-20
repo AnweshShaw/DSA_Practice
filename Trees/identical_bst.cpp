@@ -1,4 +1,4 @@
-// Check whether both BST's are equal or not.
+// Check whether both BST's are identical or not.
 /*
 Algorithm - 1) If both empty, then return true
             2) If both non-empty,
