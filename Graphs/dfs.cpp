@@ -37,7 +37,6 @@ void Graph::DFS(int v)
 // Driver's code
 int main()
 {
-    // Create a graph given in the above diagram
     Graph g;
     g.addEdge(0, 1);
     g.addEdge(0, 2);
